@@ -1,0 +1,32 @@
+# Ignore virtual environment directories
+.venv/
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+# Ignore macOS specific files
+.DS_Store
+sunbject.txt
+
+myenv/
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / editor folders
+.idea/
+.vscode/
+.cursor-server
+.vscode-server
+.windsurf-server
+
+# Lightning AI specific
+.lightning_studio/
+
+# Misc
+.wget-hsts
+
+# Duplicate/backup config
+pyproject.txt
+
+# Type checker cache
+.mypy_cache/
