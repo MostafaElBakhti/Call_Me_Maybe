@@ -8,8 +8,10 @@ import json
 class Parameter(BaseModel):
     type: str
 
+
 class Returns(BaseModel):
     type: str
+
 
 class Function(BaseModel):
     name: str
@@ -20,6 +22,7 @@ class Function(BaseModel):
 
 class Prompt(BaseModel):
     prompt: str
+
 
 def _load_json(path: str, label: str) -> list[dict[str, Any]]:
     """Load and parse a JSON array from a file."""
