@@ -109,7 +109,7 @@ def main() -> None:
         generated_name_ids: list[int] = []
         name_complete = False
 
-        for _ in range(100):
+        for step in range(100):
             current_input = full_prompt_ids + all_generated
             logits = model.get_logits_from_input_ids(current_input)
 
@@ -120,6 +120,11 @@ def main() -> None:
                 next_id = get_best_next_id(logits, valid_next)
                 generated_name_ids.append(next_id)
                 all_generated.append(next_id)
+                print(
+                    f"[step {step}] name so far: "
+                    f"{model.decode(generated_name_ids)}",
+                    end="\r"
+                )
 
                 if generated_name_ids == valid_name_ids["null"]:
                     results.append(
@@ -137,7 +142,13 @@ def main() -> None:
                 all_generated.append(next_id)
 
             generated_text: str = model.decode(all_generated)
+            print(
+                f"[step {step}] generating: "
+                f"{generated_text.strip()}",
+                end="\r"
+            )
             if generated_text.strip().endswith("}}"):
+                print()
                 try:
                     cleaned = (
                         generated_text.strip()
