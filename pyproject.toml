@@ -1,24 +1,15 @@
 [project]
-name = "callmemaybe"
+name = "CallMeMaybe"
 version = "0.1.0"
-description = "Add your description here"
+description = "Introduction to function calling in LLMs"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pydantic>=2.13.3",
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
     "torch>=2.0.0",
-    "transformers>=5.7.0",
-    "pytest>=8.0.0",
-    "flake8>=7.0.0",
+    "transformers>=4.40.0",
+    "accelerate>=0.30.0",
+    "flake8>=6.0.0",
     "mypy>=1.0.0",
 ]
-
-[tool.uv.sources]
-torch = [
-    { index = "pytorch-cu124" },
-]
-
-[[tool.uv.index]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
-explicit = true
