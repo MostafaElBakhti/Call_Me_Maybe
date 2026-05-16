@@ -76,7 +76,7 @@ def main() -> None:
         model = Small_LLM_Model(model_name=args.model)
     except Exception as e:
         raise RuntimeError(f"Failed to load model '{args.model}': {e}")
-    print("Model loaded successfully.")
+    print("====> Model loaded successfully. <====")
 
     functions_names = [f.name for f in functions]
     print(f"Available functions: {functions_names}")

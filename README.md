@@ -166,3 +166,24 @@ The system consistently handles ambiguous prompts (e.g. "add 2 and 3 and 6" with
 - [JSON grammar-based generation](https://github.com/outlines-dev/outlines)
 
 **AI usage:** Claude was used during this project for debugging constrained decoding logic, understanding how the tokenizer vocabulary maps to token IDs, and reviewing error handling coverage. All algorithmic decisions and final implementation were written and validated by the student.
+
+## Bonus
+
+**Multiple model support** — the `--model` flag accepts any HuggingFace model
+compatible with `llm_sdk`:
+
+```bash
+uv run python -m src --model Qwen/Qwen3-0.6B
+uv run python -m src --model FrontiersMind/Nandi-Mini-150M-Tool-Calling
+uv run python -m src --model FrontiersMind/Nandi-Mini-600M-Early-Checkpoint
+```
+
+**Generation visualization** — the token generation process is displayed live
+in the terminal, overwriting the same line at each step:
+
+```
+[step 0] name so far: fn_
+[step 1] name so far: fn_add_numbers
+[step 5] generating: {"name": "fn_add_numbers", "parameters": {"a": 2.0
+[step 18] generating: {"name": "fn_add_numbers", "parameters": {"a": 2.0, "b": 3.0}}
+```
