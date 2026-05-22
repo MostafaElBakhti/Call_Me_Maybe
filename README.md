@@ -4,6 +4,18 @@
 
 ---
 
+<div align="center">
+
+# Call Me Maybe
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square)
+![Score](https://img.shields.io/badge/Score-125%2F100-green?style=flat-square)
+![License](https://img.shields.io/badge/42-Project-black?style=flat-square)
+
+*Translating natural language into structured JSON using constrained decoding*
+
+</div>
+
 ## Description
 
 A function calling tool that translates natural language prompts into structured
